@@ -1,0 +1,6 @@
+uvicorn[standard]
+fastapi
+pandas
+scikit-learn
+nba_api
+react-router-dom
