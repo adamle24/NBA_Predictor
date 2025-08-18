@@ -24,7 +24,7 @@ function PlayerCard({ player, statName}) {
                     component="img"
                     src={imgSrc}
                     alt={name}
-                    onError={() => setSrc(defaultPicture)}
+                    onError={(e) => { e.currentTarget.src = defaultPicture; }}
                 />
             </Box>
 
