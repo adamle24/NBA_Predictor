@@ -1,5 +1,5 @@
 import playerPictures from "../utils/playerPictures";
-import defaultPicture from "../assets/players/default.avif";
+import defaultPicture from "../assets/players/Default.avif";
 import { Card, CardMedia, CardContent, Typography, Chip, Box, Stack} from "@mui/material";
 
 function PlayerCard({ player, statName}) {
