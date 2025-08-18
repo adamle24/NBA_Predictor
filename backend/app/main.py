@@ -6,8 +6,9 @@ app = FastAPI(title="NBA Predictor")
 
 # CORS between frontend and backend 
 origins = [
-    "http://localhost:5173",  # Your React app's local development URL
-    "http://127.0.0.1:5173"
+    "http://localhost:5173",  
+    "http://127.0.0.1:5173",
+    "https://nbapredictor.vercel.app/",
 ]
 
 app.add_middleware(
