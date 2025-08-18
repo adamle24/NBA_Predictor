@@ -1,6 +1,6 @@
 import TeamSelector from "./TeamSelector";
 import { useState } from "react";
-import { getRecentPrediction } from "../services/api";
+import { getPrediction } from "../services/api";
 import { getFullTeamName } from "../utils/teamUtils";
 import { Box, Typography, Button, Grid, Stack, Container, Paper} from "@mui/material";
 
@@ -10,7 +10,7 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
     const [prediction, setPrediction] = useState(null);
     const [error, setError] = useState(null);
     
-    const handleRecentPredictClick = async () => {
+    const handlePredictClick = async () => {
         if (!homeTeam || !awayTeam) {
             setError("Select the home team and away team");
             return;
@@ -21,7 +21,7 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
         setPrediction(null);
 
         try {
-            const result = await getRecentPrediction(homeTeam, awayTeam);
+            const result = await getPrediction(homeTeam, awayTeam);
             setPrediction(result);
         } catch (error) {
             setError("failed to get prediction");
@@ -102,7 +102,7 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={handleRecentPredictClick}
+                                    onClick={handlePredictClick}
                                     disabled={isLoading || !homeTeam || !awayTeam}
                                     sx={{ maxWidth: 450}}
                                 >
