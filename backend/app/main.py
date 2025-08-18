@@ -1,6 +1,6 @@
 from fastapi import FastAPI 
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import injuries, player, players, predict, recent_predict, team_leaders
+from app.routes import player, players, predict, recent_predict, team_leaders
 
 app = FastAPI(title="NBA Predictor")
 

@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from app.injury_scraper import scrape_nba_injuries
 from app.db import get_db_connection
 from app.routes.players import get_players
 import pandas as pd
