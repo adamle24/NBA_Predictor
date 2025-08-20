@@ -1,14 +1,7 @@
 import StatSection from "./StatSection";
 import { Box, Typography, Grid, Container } from "@mui/material";
+import normalizeAbbreviation from "../utils/normalizeAbbrev";
 
-function normalizeAbbreviation(abb) {
-    const map = {
-        bkn: "brk",
-        cha: "cho",
-        phx: "pho",
-    };
-    return map[abb] || abb;
-}
 
 function PlayerDataSection( {homeTeam, awayTeam} ) {
     return(

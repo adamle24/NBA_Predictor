@@ -1,4 +1,5 @@
 import TeamSelector from "./TeamSelector";
+import normalizeAbbreviation from "../utils/normalizeAbbrev";
 import { useState } from "react";
 import { getPrediction } from "../services/api";
 import { getFullTeamName } from "../utils/teamUtils";
@@ -21,6 +22,8 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
         setPrediction(null);
 
         try {
+            homeTeam = normalizeAbbreviation(homeTeam);
+            awayTeam = normalizeAbbreviation(awayTeam);
             const result = await getPrediction(homeTeam, awayTeam);
             setPrediction(result);
         } catch (error) {
