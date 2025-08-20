@@ -22,9 +22,9 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
         setPrediction(null);
 
         try {
-            homeTeam = normalizeAbbreviation(homeTeam);
-            awayTeam = normalizeAbbreviation(awayTeam);
-            const result = await getPrediction(homeTeam, awayTeam);
+            let homeTeamAbb = normalizeAbbreviation(homeTeam.value);
+            let awayTeamAbb = normalizeAbbreviation(awayTeam.value);
+            const result = await getPrediction(homeTeamAbb, awayTeamAbb);
             setPrediction(result);
         } catch (error) {
             setError("failed to get prediction");

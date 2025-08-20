@@ -22,7 +22,7 @@ export async function getRecentPrediction(homeTeam, awayTeam) {
 
 export async function getPrediction(homeTeam, awayTeam) {
     try {
-        const url = `${API_BASE}/predict/${homeTeam.value}-${awayTeam.value}`;
+        const url = `${API_BASE}/predict/${homeTeam}-${awayTeam}`;
         const response = await fetch(url, {
             method: "GET",
         });
