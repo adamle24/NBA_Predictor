@@ -62,7 +62,7 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
                                         {homeTeam && (
                                             <Box 
                                                 component="img"
-                                                src={`/team-logos/${homeTeam.value}.png`}
+                                                src={`/team-logos/${normalizeAbbreviation(homeTeam.value)}.png`}
                                                 alt={homeTeam.value}
                                                 sx={{ height: 55, width: "auto", mt: 3, alignSelf: "center"}}
                                             />
@@ -84,7 +84,7 @@ function PredictSection( {homeTeam, setHomeTeam, awayTeam, setAwayTeam} ) {
                                         {awayTeam && (
                                             <Box 
                                                 component="img"
-                                                src={`/team-logos/${awayTeam.value}.png`}
+                                                src={`/team-logos/${normalizeAbbreviation(awayTeam.value)}.png`}
                                                 alt={awayTeam.value}
                                                 sx={{ height: 55, width: "auto", mt: 3, alignSelf: "center"}}
                                             />
